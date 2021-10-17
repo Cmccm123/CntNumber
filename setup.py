@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'CntNumber',         # How you named your package folder (MyLib)
   packages = ['CntNumber'],   # Chose the same as "name"
-  version = '0.5',      # Start with a small number and increase it with every change you make
+  version = '0.9',      # Start with a small number and increase it with every change you make
   license='afl-3.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'CM is good boy, DSA no.1',   # Give a short description about your library
   author = 'CM',                   # Type in your name
