@@ -5,7 +5,7 @@ DSA NO.1
 
 BTW,我好靚仔!~
 
-##Usage example
+#Usage example
 ```python
 import CntNumber
 CntNumber.toNum('九千九百九十九萬九千九百九十九億九千九百九十九萬九千九百九十九')
