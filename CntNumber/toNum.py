@@ -29,7 +29,7 @@ def toNum(inp):
         else:
             if(inp[index-1] in unit[1:] and index == len(inp) - 1):
                 inp += unit[unit.index(inp[index-1])-1]
-            elif(inp[index-1] in unit[1:] and (inp[index+1] in unit[3:] or inp[index+1] == '零')):
+            elif(inp[index-1] in unit[1:] and (inp[index+1] in unit[3:] or inp[index+1] == '零') and index != 0):
                 inp = inp[0:index+1]+unit[unit.index(inp[index-1])-1]+inp[index+1:]
         index += 1
     for index,i in enumerate(inp):
@@ -78,4 +78,4 @@ def toNum(inp):
     return sumNum(sumNum(sumNum(result_list),['s00000000']),[])[0]
 
 if __name__ == "__main__":
-    print(toNum('十萬億零四'))
+    print(toNum('十億億'))
