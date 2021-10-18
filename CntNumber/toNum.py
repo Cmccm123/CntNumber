@@ -4,7 +4,8 @@ def toNum(inp):
     '壹': 1, '貳': 2, '叁': 3, '肆': 4, '伍': 5, '陸': 6, '柒': 7, '捌': 8, '玖': 9, '貮': 2, '兩': 2}
     unit_d = {'零':'0','十':'s0','百':'s00','千':'s000','萬':'s0000','億':'s00000000','万':'s0000', '亿':'s00000000'}
     result_list = []
-    unit = ['十', '百', '千', '萬', '億','万', '亿'] 
+    unit = ['十', '百', '千', '萬', '億'] 
+    unit_zh = {'十':'十','百':'百','千':'千','萬':'萬','億':'億','万':'萬', '亿':'億'}
     if(all([i not in inp for i in unit])):
         rs = ""
         for i in inp:
@@ -13,14 +14,18 @@ def toNum(inp):
     index = 0
     while(index < len(inp)):
         i = inp[index]
-        if(i not in unit and inp[index-1] in unit[1:] and index == len(inp) - 1):
-            inp += unit[unit.index(inp[index-1])-1]
-        elif(i not in unit and inp[index-1] in unit[1:] and (inp[index+1] in unit[3:] or inp[index+1] == '零') and index != 0):
-            inp = inp[0:index+1]+unit[unit.index(inp[index-1])-1]+inp[index+1:]
-        elif(i in unit and inp[index-1] in unit[1:]):
-            inp = inp[0:index]+'一'+inp[index:]
-        elif(index == 0 and i in unit):
-            inp = '一' + inp
+        if i in list(unit_zh.keys()):
+            i = unit_zh[inp[index]]
+            inp = inp[0:index] + i +inp[index+1:]
+            if(inp[index-1] in unit[1:] and index != len(inp) - 1):
+                inp = inp[0:index]+'一'+inp[index:]
+            elif(index == 0):
+                inp = '一' + inp
+        else:
+            if(inp[index-1] in unit[1:] and index == len(inp) - 1):
+                inp += unit[unit.index(inp[index-1])-1]
+            elif(inp[index-1] in unit[1:] and (inp[index+1] in unit[3:] or inp[index+1] == '零') and index != 0):
+                inp = inp[0:index+1]+unit[unit.index(inp[index-1])-1]+inp[index+1:]
         index += 1
     for index,i in enumerate(inp):
             if(i in unit or i == '零'):
@@ -68,4 +73,4 @@ def toNum(inp):
     return sumNum(sumNum(sumNum(result_list),['s00000000']),[])[0]
 
 if __name__ == "__main__":
-    print(toNum('十万'))
+    print(toNum('十万亿'))

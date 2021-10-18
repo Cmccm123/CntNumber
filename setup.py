@@ -1,8 +1,11 @@
 from distutils.core import setup
+import os
+with open(os.path.dirname(os.path.abspath(__file__))+"\\README.txt","r",encoding='utf-8') as fh:
+  long_description = fh.read()
 setup(
   name = 'CntNumber',         # How you named your package folder (MyLib)
   packages = ['CntNumber'],   # Chose the same as "name"
-  version = '0.9',      # Start with a small number and increase it with every change you make
+  version = '0.9.6',      # Start with a small number and increase it with every change you make
   license='afl-3.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'CM is good boy, DSA no.1',   # Give a short description about your library
   author = 'CM',                   # Type in your name
@@ -11,6 +14,8 @@ setup(
   download_url = 'https://github.com/Cmccm123/CntNumber/archive/refs/tags/Chinese.numbers.tar.gz',    # I explain this later on
   keywords = ['Chinese numerals', 'translation'],   # Keywords that define your package best
   install_requires=[],
+  long_description=long_description,
+  long_description_content_type="text/x-rst",
   classifiers=[
     'Development Status :: 4 - Beta',      # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
     'Intended Audience :: Developers',      # Define that your audience are developers
