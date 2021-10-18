@@ -5,7 +5,7 @@ with open(os.path.dirname(os.path.abspath(__file__))+"\\README.txt","r",encoding
 setup(
   name = 'CntNumber',         # How you named your package folder (MyLib)
   packages = ['CntNumber'],   # Chose the same as "name"
-  version = '0.9.6',      # Start with a small number and increase it with every change you make
+  version = '0.9.7',      # Start with a small number and increase it with every change you make
   license='afl-3.0',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'CM is good boy, DSA no.1',   # Give a short description about your library
   author = 'CM',                   # Type in your name

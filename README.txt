@@ -6,6 +6,8 @@ DSA NO.1
 
 BTW,我好靚仔!~
 
+I can help youtranslate Chinese numbers to number :)
+
 Usage example
 =============
 .. code:: python
